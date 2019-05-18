@@ -16,7 +16,14 @@
     <p>Some paragraph</p>
 
     <script>
-    //test code
+        //test code
+        const library = new Library;
+        const book = new Book('Alchemist', 'Paulo Cohelio', '924-12123552');
+        const patron = new Patron('Radu', 'test@gmail.com');
+
+        library.addBook(book);
+        library.addPatron(patron);
+        console.log(library);
 
     </script>
 </body>

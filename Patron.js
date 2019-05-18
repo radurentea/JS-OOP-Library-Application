@@ -16,5 +16,11 @@ class Patron
         newDueDate.setDate(newDueDate.getDate() + 14);
         book.dueDate = newDueDate;
     }
-
+    returnBook(book)
+    {
+        this.currentBook = null;
+        book.out = false;
+        book.patron = null;
+        book.dueDate = null;
+    }
 }

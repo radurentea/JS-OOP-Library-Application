@@ -6,7 +6,7 @@ class Patron
         this.email = email;
         this.currentBook = null;
     }
-    checkout(book)
+    checkOut(book)
     {
         this.currentBook = book;
         book.out = true;

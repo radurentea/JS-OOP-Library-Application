@@ -5,6 +5,7 @@ class Library
         this.books = [];
         this.patrons = [];
         this.dailyFine = .1;
+        this.overDue = []; // Store Patrons who have overdue books
     }
     addPatron(patron)
     {
@@ -16,15 +17,23 @@ class Library
     }
     chargeFines()
     {
-        const now = new Date();
+        const today = new Date();
 
-        const latePatrons = this.patrons.filter(patron => (patron.currentBook !== null && patron.currentBook.dueDate < now));
+        const latePatrons = this.patrons.filter(patron => (patron.currentBook !== null && patron.currentBook.dueDate < today));
 
         for (let patron of latePatrons)
         {
-            const dateDiff = new Date(now - patron.currentBook.dueDate);
-            const daysLate = dateDiff.getDate();
-            patron.balance += this.dailyFine * daysLate;
+            if (this.overdue.includes(latePatron.name))
+            {
+                console.log("Don't Charge")
+            } else
+            {
+
+                const dateDiff = new Date(today - patron.currentBook.dueDate);
+                const daysLate = dateDiff.getDate();
+                patron.balance += this.dailyFine * daysLate;
+                this.overDue.push(latePatron.name);
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ class Library
     {
         this.books = [];
         this.patrons = [];
+        this.dailyFine = .1;
     }
     addPatron(patron)
     {

@@ -23,7 +23,7 @@ class Library
 
         for (let patron of latePatrons)
         {
-            if (this.overdue.includes(latePatron.name))
+            if (this.overDue.includes(latePatrons.name))
             {
                 console.log("Don't Charge")
             } else
@@ -32,7 +32,7 @@ class Library
                 const dateDiff = new Date(today - patron.currentBook.dueDate);
                 const daysLate = dateDiff.getDate();
                 patron.balance += this.dailyFine * daysLate;
-                this.overDue.push(latePatron.name);
+                this.overDue.push(latePatrons.name);
             }
         }
     }
